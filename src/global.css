@@ -14,7 +14,12 @@ body,
   height: 100%;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
+  font-size: 1.6rem;
   background: #f7f3f7;
   -webkit-font-smoothing: antialiased;
 }
