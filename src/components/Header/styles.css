@@ -19,6 +19,13 @@ header .container .logo-wrapper {
   align-items: center;
 }
 
+.container .logo-wrapper a {
+  text-decoration: none;
+  color: inherit;
+  display: inherit;
+  align-items: inherit;
+}
+
 header .container .logo-wrapper img {
   height: 3.9rem;
   margin-right: 1rem;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Logo from "../../assets/logo-new.svg";
 import "./styles.css";
 
@@ -7,8 +8,10 @@ function Header() {
     <header>
       <div className="container">
         <div className="logo-wrapper">
-          <img src={Logo} alt="Logo" />
-          <h3>Squad Management Tool</h3>
+          <Link to="/">
+            <img src={Logo} alt="Logo" />
+            <h3>Squad Management Tool</h3>
+          </Link>
         </div>
         <div className="user-wrapper">
           <p>John Doe</p>

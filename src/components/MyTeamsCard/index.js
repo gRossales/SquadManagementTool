@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 import Card from "../Card";
 
@@ -58,7 +59,12 @@ function MyTeamsCard() {
   return (
     <Card
       title="My teams"
-      headerButtons={<button className={styles["card-header-btn"]}>+</button>}
+      headerButtons={
+        <button className={styles["card-header-btn"]}>
+          {" "}
+          <Link to="/create">+</Link>
+        </button>
+      }
     >
       <div className={styles["card-body"]}>
         <div className={styles["card-row-title"]}>
