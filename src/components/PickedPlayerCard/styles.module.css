@@ -1,0 +1,70 @@
+.colored {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #ba3d7b;
+  background: linear-gradient(180deg, #ba3d7b 0%, #632e87 100%);
+  color: white;
+}
+
+.colored .center-circle {
+  z-index: 15;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  height: 6.5rem;
+  width: 6.5rem;
+  border-radius: 50%;
+  border: 2px solid #eeeeee1c;
+  transform: translate(50%, -50%);
+  background: transparent;
+}
+
+.colored .most-picked,
+.colored .less-picked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.colored .most-picked {
+  border-right: 1px solid #eeeeee1c;
+}
+.colored .less-picked {
+  border-left: 1px solid #eeeeee1c;
+}
+
+.pick-percentage {
+  margin-top: 1rem;
+  border-bottom: solid #fff 1px;
+  transform: translate(9rem, 1rem);
+}
+
+.pick-percentage h2 {
+  padding-right: 1.6rem;
+}
+
+.avatar {
+  display: flex;
+  background: #fff;
+  height: 12rem;
+  width: 12rem;
+  border-radius: 50%;
+  z-index: 5;
+  border: solid 3px #a30662;
+  box-shadow: 0 0 10px 5px #791e8a;
+}
+
+.most-picked .avatar {
+  border: solid 3px #8e0876;
+}
+
+.avatar div {
+  flex: 1;
+  z-index: 2;
+  background: transparent;
+  border-radius: 50%;
+  transform: scale(1.15);
+  border: dashed 2px #ffffff9f;
+}

@@ -1,0 +1,24 @@
+.card {
+  background: #fff;
+  border-radius: 10px;
+  min-height: 100%;
+}
+
+.card .card-header {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  border: 0;
+  border-bottom: #eeeeee solid 2px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card .card-title {
+  padding: 3rem;
+  color: #552c8a;
+}
+
+.card .card-body-container {
+  padding: 0.8rem;
+}
