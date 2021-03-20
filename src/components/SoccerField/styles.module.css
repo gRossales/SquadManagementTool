@@ -1,0 +1,15 @@
+.container {
+  width: calc(100vw / 3);
+  height: 63rem;
+}
+
+.container .field {
+  background-image: linear-gradient(to bottom right, #b13b7c 0%, #732b80 100%);
+  width: calc(100vw / 3);
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  padding: 2rem;
+  border-radius: 3px;
+}

@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  margin: 1rem 0 0 1rem;
+}
+
+.container p {
+  color: #c50341;
+  margin-left: 1rem;
+}
