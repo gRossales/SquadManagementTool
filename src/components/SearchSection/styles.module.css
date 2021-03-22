@@ -1,0 +1,19 @@
+.search-results {
+  width: calc(100vw / 3);
+  min-height: 4rem;
+  border: 0;
+  border-bottom: solid 2px #e0e0e0;
+  align-items: flex-start;
+}
+
+@media (max-width: 810px) {
+  .search-results {
+    width: 80%;
+  }
+}
+
+@media (max-width: 425px) {
+  .search-results {
+    width: 100%;
+  }
+}

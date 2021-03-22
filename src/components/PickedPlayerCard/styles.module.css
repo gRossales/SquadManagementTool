@@ -68,3 +68,26 @@
   transform: scale(1.15);
   border: dashed 2px #ffffff9f;
 }
+
+@media (max-width: 1024px) {
+  .colored {
+    min-height: calc(50vw - 8rem);
+  }
+}
+
+@media (max-width: 425px) {
+  .avatar {
+    width: 8rem;
+    height: 8rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  .pick-percentage {
+    transform: translate(6rem, 1rem);
+  }
+  .pick-percentage h2 {
+    font-size: 1.8rem;
+    padding-right: 0px;
+  }
+}

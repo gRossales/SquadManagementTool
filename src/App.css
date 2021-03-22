@@ -9,19 +9,40 @@
 .main-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 4rem 4rem;
+  margin: 4rem;
   height: 100vh;
   gap: 4.6rem;
 }
 
-.card.colored {
-  background: #ba3d7b;
-  background: linear-gradient(180deg, #ba3d7b 0%, #632e87 100%);
-  color: white;
-}
-
 .right-side-wrapper {
   display: grid;
-  grid-template-rows: 0.58fr 0.42fr;
+  grid-template-rows: auto;
   gap: 1.9rem;
+}
+
+@media (max-width: 1024px) {
+  .main-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .right-side-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container .main-wrapper {
+    margin: 2rem;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .app-container .main-wrapper {
+    margin: 1rem;
+    gap: 1rem;
+  }
 }

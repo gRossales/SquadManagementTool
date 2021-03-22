@@ -1,0 +1,45 @@
+.container {
+  flex: 1;
+}
+
+.container label {
+  font-weight: bold;
+  display: block;
+  color: #333333;
+  margin-bottom: 1.2rem;
+}
+
+.container.inline {
+  display: flex;
+  align-items: center;
+  width: calc(100vw / 3);
+}
+
+.container.inline select {
+  margin-left: 3rem;
+  margin-bottom: 1.2rem;
+  height: 2.8rem;
+  padding-inline: 1.2rem;
+  border: 2px solid #cccccc;
+  border-radius: 3px;
+  background: #fff;
+}
+.container.inline select::after {
+  background: red;
+}
+@media (max-width: 810px) {
+  .container {
+    display: block;
+    min-width: 80%;
+  }
+  .container.inline select {
+    right: 0;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    min-width: 100%;
+  }
+}

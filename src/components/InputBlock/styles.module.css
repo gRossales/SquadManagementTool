@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  height: 100%;
+}
+.container label {
+  font-weight: bold;
+  display: block;
+  color: #333333;
+  margin-bottom: 1.2rem;
+}
+
+.container input,
+.container textarea {
+  padding: 1.6rem;
+  border: solid 2px #dadada;
+  width: calc(100vw / 3);
+  border-radius: 5px;
+  height: 2.8rem;
+  margin-bottom: 2.8rem;
+}
+
+.container textarea {
+  resize: none;
+  display: flex;
+  flex: 1;
+  height: max-content;
+  margin-bottom: 0;
+}
+
+@media (max-width: 810px) {
+  .container {
+    width: 80%;
+  }
+  .container input,
+  .container textarea {
+    width: 100%;
+  }
+  .container textarea {
+    margin-bottom: 2.8rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    width: 100%;
+  }
+}

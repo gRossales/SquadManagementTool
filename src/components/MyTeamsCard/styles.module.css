@@ -87,3 +87,10 @@
 .card-row-title div span {
   font-size: 1.6rem;
 }
+
+@media (max-width: 425px) {
+  .card-row,
+  .card-row-title {
+    padding: 0;
+  }
+}

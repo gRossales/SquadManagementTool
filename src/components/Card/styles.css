@@ -2,6 +2,7 @@
   background: #fff;
   border-radius: 10px;
   min-height: 100%;
+  height: max-content;
 }
 
 .card .card-header {
@@ -21,4 +22,18 @@
 
 .card .card-body-container {
   padding: 0.8rem;
+}
+
+@media (max-width: 1024px) {
+  .card {
+    display: block;
+    padding-bottom: 1rem;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 425px) {
+  .card .card-title {
+    padding: 2rem;
+  }
 }

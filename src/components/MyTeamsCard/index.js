@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 import Card from "../Card";
+import { MyTeamsContext } from "../../context/MyTeamsContext";
 
 const teams = [
   { name: "Barcelona", description: "Barcelona Squad" },
@@ -16,9 +17,12 @@ function MyTeamsCard() {
   const [sortingBy, setSortingBy] = useState("");
   const [ascending, setAscending] = useState(true);
   const [selectedTeam, setSelectedTeam] = useState("");
+  const state = useContext(MyTeamsContext);
+  console.log(state);
 
   function renderRows() {
-    let newteams = teams;
+    console.log(state);
+    let newteams = [...teams, ...state.state];
     if (sortingBy !== "") {
       newteams.sort((teamA, teamB) => {
         if (teamA[sortingBy] > teamB[sortingBy]) {
