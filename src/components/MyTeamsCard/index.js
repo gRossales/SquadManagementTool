@@ -5,14 +5,14 @@ import Card from "../Card";
 import { MyTeamsContext } from "../../context/MyTeamsContext";
 import useTeam from "../../hooks/useTeam";
 
-// const teams = [
-//   { name: "Barcelona", description: "Barcelona Squad" },
-//   { name: "Real Madrid", description: "Real Madrid Squad" },
-//   { name: "Milan", description: "Milan Squad" },
-//   { name: "Liverpool", description: "Liverpool Squad" },
-//   { name: "Bayern Munich", description: "Bayern Munich Squad" },
-//   { name: "Lazio", description: "Lazio Squad" },
-// ];
+const teams = [
+  { name: "Barcelona", description: "Barcelona Squad" },
+  { name: "Real Madrid", description: "Real Madrid Squad" },
+  { name: "Milan", description: "Milan Squad" },
+  { name: "Liverpool", description: "Liverpool Squad" },
+  { name: "Bayern Munich", description: "Bayern Munich Squad" },
+  { name: "Lazio", description: "Lazio Squad" },
+];
 
 function MyTeamsCard() {
   const [sortingBy, setSortingBy] = useState("");
@@ -28,11 +28,11 @@ function MyTeamsCard() {
 
   function editTeam(team) {
     selectTeam(team);
-    setTimeout(() => history.push("/create", { mode: "update" }), 50);
+    setTimeout(() => history.push("/create", { mode: "update" }), 150);
   }
 
   function renderRows() {
-    let newteams = state ? [...state] : []; //[...teams, ...state.state];
+    let newteams = state ? [...state] : teams; //[...teams, ...state.state];
     if (sortingBy !== "") {
       newteams.sort((teamA, teamB) => {
         if (teamA[sortingBy] > teamB[sortingBy]) {

@@ -51,12 +51,14 @@ function TeamCreatePage() {
   const { state: teams, dispatch } = useContext(MyTeamsContext);
 
   function handleSubmit(e) {
+    console.log("Trying to add a team");
     e.preventDefault();
     if (
       teams &&
       mode === "create" &&
       teams.some((team) => team.name === teamName)
     ) {
+      console.log("Trying to add a team which is alread here");
       return;
     }
     dispatch({
