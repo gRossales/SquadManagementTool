@@ -17,7 +17,7 @@ This tool guides users to create and configure soccer teams and shows statistics
        2.2 User must be able to sort by name and description.
 
     [ ] 3. Ability to Create/Edit and Remove a team.
-        * IN PROGRESS: Can create teams and delete teams, edit not working yet
+        * IN PROGRESS: Can create teams (commit 6740e4b598c0cd61fa90fd1e0fea1fc49a1737c0) and delete teams is in progress, edit not working yet.
 
        3.1Team information section only.
 
