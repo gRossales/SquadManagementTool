@@ -8,7 +8,6 @@ function SoccerField({ formation }) {
       .split("-")
       .reverse()
       .forEach((n, index) => {
-        console.log(index);
         let row = parseInt(n);
         let i = 0;
         switch (row) {

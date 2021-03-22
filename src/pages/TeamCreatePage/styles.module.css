@@ -3,6 +3,11 @@
   height: 100%;
 }
 
+.container .card-header-btn {
+  margin-right: 1.6rem;
+  cursor: pointer;
+}
+
 .team-info {
   flex: 1;
   margin-top: 3rem;

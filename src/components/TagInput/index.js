@@ -20,7 +20,6 @@ function TagInput() {
       tagName &&
       !tags.some((name) => name === tagName)
     ) {
-      console.log("if keypress");
       setTags([...tags, tagName]);
       setTagName("");
     }

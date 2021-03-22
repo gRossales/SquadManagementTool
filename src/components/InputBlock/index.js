@@ -14,9 +14,6 @@ function InputBlock({
   value,
   onChange,
 }) {
-  if (pattern) {
-    console.log("PATTERN is a string?", typeof pattern === "string");
-  }
   function handleChange(e) {
     onChange(e.target.value);
   }

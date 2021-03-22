@@ -13,6 +13,7 @@ function myTeamsReducer(state = [], action) {
         (team) => team.name === action.payload.name
       );
       state[teamIndex] = { ...state[teamIndex], ...action.payload };
+
       return [...state];
     case "delete":
       return [...state.filter((team) => team.name !== action.payload.name)];

@@ -1,4 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { useHistory, useLocation, Link } from "react-router-dom";
 import styles from "./styles.module.css";
 import { TeamContext } from "../../context/TeamContext";
 import { MyTeamsContext } from "../../context/MyTeamsContext";
@@ -11,6 +12,8 @@ import SelectInput from "../../components/SelectInput";
 import RadioInput from "../../components/RadioInput";
 
 function TeamCreatePage() {
+  let thisLocation = useLocation();
+  let history = useHistory();
   const options = [
     "3-2-2-3",
     "3-2-3-1", // Value has wrong number of players
@@ -23,6 +26,10 @@ function TeamCreatePage() {
     "4-5-1",
     "5-4-1",
   ];
+  const [mode, setMode] = useState("");
+  useEffect(() => {
+    setMode(thisLocation.state);
+  }, [thisLocation]);
 
   const {
     teamName,
@@ -42,16 +49,18 @@ function TeamCreatePage() {
   } = useContext(TeamContext);
 
   const { state: teams, dispatch } = useContext(MyTeamsContext);
-  console.log("TEAM FROM TEAMCREATEPAGE - ", teams);
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (teams && teams.some((team) => team.name === teamName)) {
-      alert("Form has errors");
+    if (
+      teams &&
+      mode === "create" &&
+      teams.some((team) => team.name === teamName)
+    ) {
       return;
     }
     dispatch({
-      type: "create",
+      type: mode,
       payload: {
         name: teamName,
         description: teamDesc,
@@ -62,11 +71,21 @@ function TeamCreatePage() {
         players: teamPlayers,
       },
     });
+    history.push("/");
   }
 
   return (
     <div className={styles.container}>
-      <Card title="Create your team">
+      <Card
+        title="Create your team"
+        headerButtons={
+          <Link to="/">
+            <span className={`material-icons ${styles["card-header-btn"]}`}>
+              close
+            </span>
+          </Link>
+        }
+      >
         <form onSubmit={handleSubmit}>
           <fieldset className={styles["team-info"]}>
             <legend className={styles["team-info-title"]}>Team Info</legend>

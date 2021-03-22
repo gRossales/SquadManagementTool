@@ -22,7 +22,6 @@ function SearchSection() {
     async function getPlayers() {
       const { data } = await API.get(`/players/search/${searchTerm}`);
       setPlayers(data.api.players);
-      console.log(data);
     }
     if (debounced) {
       getPlayers();

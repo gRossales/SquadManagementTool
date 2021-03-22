@@ -1,28 +1,38 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styles from "./styles.module.css";
 import Card from "../Card";
 import { MyTeamsContext } from "../../context/MyTeamsContext";
+import useTeam from "../../hooks/useTeam";
 
-const teams = [
-  { name: "Barcelona", description: "Barcelona Squad" },
-  { name: "Real Madrid", description: "Real Madrid Squad" },
-  { name: "Milan", description: "Milan Squad" },
-  { name: "Liverpool", description: "Liverpool Squad" },
-  { name: "Bayern Munich", description: "Bayern Munich Squad" },
-  { name: "Lazio", description: "Lazio Squad" },
-];
+// const teams = [
+//   { name: "Barcelona", description: "Barcelona Squad" },
+//   { name: "Real Madrid", description: "Real Madrid Squad" },
+//   { name: "Milan", description: "Milan Squad" },
+//   { name: "Liverpool", description: "Liverpool Squad" },
+//   { name: "Bayern Munich", description: "Bayern Munich Squad" },
+//   { name: "Lazio", description: "Lazio Squad" },
+// ];
 
 function MyTeamsCard() {
   const [sortingBy, setSortingBy] = useState("");
   const [ascending, setAscending] = useState(true);
   const [selectedTeam, setSelectedTeam] = useState("");
-  const state = useContext(MyTeamsContext);
-  console.log(state);
+  const { state, dispatch } = useContext(MyTeamsContext);
+  const selectTeam = useTeam();
+  const history = useHistory();
+
+  function deleteTeam(team) {
+    dispatch({ type: "delete", payload: team });
+  }
+
+  function editTeam(team) {
+    selectTeam(team);
+    setTimeout(() => history.push("/create", { mode: "update" }), 50);
+  }
 
   function renderRows() {
-    console.log(state);
-    let newteams = [...teams, ...state.state];
+    let newteams = state ? [...state] : []; //[...teams, ...state.state];
     if (sortingBy !== "") {
       newteams.sort((teamA, teamB) => {
         if (teamA[sortingBy] > teamB[sortingBy]) {
@@ -51,9 +61,13 @@ function MyTeamsCard() {
             className={styles["card-row-buttons"]}
             style={{ display: selectedTeam !== team.name ? "none" : "flex" }}
           >
-            <span className="material-icons">delete</span>
+            <span className="material-icons" onClick={() => deleteTeam(team)}>
+              delete
+            </span>
             <span className="material-icons">share</span>
-            <span className="material-icons">edit</span>
+            <span className="material-icons" onClick={() => editTeam(team)}>
+              edit
+            </span>
           </div>
         </div>
       </div>
@@ -66,7 +80,7 @@ function MyTeamsCard() {
       headerButtons={
         <button className={styles["card-header-btn"]}>
           {" "}
-          <Link to="/create">+</Link>
+          <Link to={{ pathname: "/create", state: { mode: "create" } }}>+</Link>
         </button>
       }
     >

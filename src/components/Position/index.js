@@ -41,7 +41,6 @@ function Position({ spanSize = 1, children }) {
     e.target.appendChild(document.getElementById(data));
     setPlayer(selectedPlayer);
     e.preventDefault();
-    //setPlayerName(acro);
   }
 
   return (

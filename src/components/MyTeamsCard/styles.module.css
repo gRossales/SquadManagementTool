@@ -82,6 +82,7 @@
 .card-row-buttons span {
   margin-left: 1.4rem;
   font-size: 1.6rem;
+  cursor: pointer;
 }
 
 .card-row-title div span {
