@@ -1,10 +1,10 @@
 <h1 align="center"> 
-	🚧  Squad Management Tool [ Work in progress]  🚧
+	  Squad Management Tool
 </h1>
 
 This tool guides users to create and configure soccer teams and shows statistics about current teams.
 
-## TODO
+## 🚧 Work in progress 🚧
 
 ### Phase 1
 
